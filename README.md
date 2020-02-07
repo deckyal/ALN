@@ -1,4 +1,5 @@
-# ALN
+# ALN (Adversarial based Latent Network)
+
 This the Source code for our adversarial based neural network for affect estimations in the wild. 
 
 This source code holds the image augmentations techniques used on our other repositories : https://github.com/deckyal/FADeNN. 

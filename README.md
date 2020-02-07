@@ -1,7 +1,9 @@
 # ALN
 This the Source code for our adversarial based neural network for affect estimations in the wild. 
 
-The requirements : 
+This source code holds the image augmentations techniques used on our other repositories : https://github.com/deckyal/FADeNN. 
+
+Requirements : 
   1. Python 2.7
   2. Pytorch 0.4
   3. OpenSmile : https://www.audeering.com/opensmile/

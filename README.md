@@ -13,7 +13,7 @@ Preparations :
 
 Trainings : 
   1. chal-main.py : To train the discriminator only using l2 loss
-  2. chal-main_gan_single.py : To train using both Generator and Discriminators 
+  2. chal-main_gan_single.py : To train using both Generator and Discriminators. 
   Please observe the required parameters to tweak the configurations.
   
 Tests : 

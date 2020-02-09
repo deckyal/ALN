@@ -3,11 +3,11 @@ import argparse
 from solver import Solver
 from data_loader import get_loader
 from torch.backends import cudnn
-from model import Generator, Discriminator, GeneratorM, GeneratorMZ, DiscriminatorM,DiscriminatorMST, DiscriminatorMZ
+from model import GeneratorM, GeneratorMZ, DiscriminatorM,DiscriminatorMST, DiscriminatorMZ
 
 from torch.autograd import Variable
 from torchvision.utils import save_image
-from FacialDataset import AFEWVA, AFEWVAReduced,SEWAFEWReduced,AFFChallenge
+from FacialDataset import SEWAFEWReduced,AFFChallenge
 from utils import *
 import time
 import torch.nn.functional as F
@@ -33,8 +33,8 @@ parser.add_argument('-useWeightNormalization', nargs='?', const=0, type=int, def
 parser.add_argument('-addLoss', nargs='?', const=1, type=int, default=1)#0,1,2. helpfull
 parser.add_argument('-singleTask', nargs='?', const=1, type=int, default=0)#0,1,2. Multitask is slightly better
 
-parser.add_argument('-addZ', nargs='?', const=1, type=int, default=0)#0,1,2. Multitask is slightly better
-parser.add_argument('-addS', nargs='?', const=1, type=int, default=0)#0,1,2. Multitask is slightly better
+parser.add_argument('-addZ', nargs='?', const=1, type=int, default=1)#0,1,2. Multitask is slightly better
+parser.add_argument('-addS', nargs='?', const=1, type=int, default=1)#0,1,2. Multitask is slightly better
 
 parser.add_argument('-dataset', nargs='?', const=1, type=int, default=1)# 1 is ac , 0 is other
 
@@ -48,7 +48,7 @@ def str2bool(v):
     return v.lower() in ('true')
 ##############################################################
 
-def train_w_g_adl(): #training g and d on standard l2 loss
+def train_w_g_adl(): #training g and d using semi-supervision loss + cycle loss. 
     #stripped : 
     
     includeVal = True

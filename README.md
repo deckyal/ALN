@@ -19,3 +19,6 @@ Trainings :
   
 Tests : 
   The validation code can be seen on the chal-man_gan_single.py, do_test().
+
+Citation : 
+[D. Aspandi, A. Mallol-Ragolta, B. Schuller and X. Binefa,  "Latent-Based Adversarial Neural Networks for Facial Affect Estimations," in 2020 15th IEEE International Conference on Automatic Face and Gesture Recognition (FG 2020) (FG), Buenos Aires, undefined, AR, 2020 pp. 348-352.]
